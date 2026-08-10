@@ -12,7 +12,7 @@ Desenvolver, de forma gradual, uma solução capaz de:
 
 * 📊 Coletar e analisar dados da produção
 * 🌡️ Monitorar condições ambientais
-* 💧 Auxiliar no controle da irrigação
+* 💧 Auxiliar no controle da irrigação.
 * 🌱 Analisar informações relacionadas ao solo e à produção
 * 🐛 Identificar possíveis problemas e ocorrências
 * 📈 Reduzir perdas e melhorar a eficiência da produção
