@@ -1,0 +1,6 @@
+Data,Cultura,Umidade_Solo,Temperatura,pH,Irrigacao
+2026-08-01,Tomate,35,30,5.8,Baixa
+2026-08-02,Tomate,42,29,6.0,Baixa
+2026-08-03,Tomate,55,27,6.2,Adequada
+2026-08-04,Tomate,68,26,6.5,Adequada
+2026-08-05,Tomate,78,25,6.7,Alta
