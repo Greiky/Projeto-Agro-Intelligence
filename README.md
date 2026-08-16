@@ -1,5 +1,12 @@
 # 🌱 Projeto Agro Intelligence
 
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?logo=pandas&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-Database-4479A1?logo=mysql&logoColor=white)
+![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?logo=powerbi&logoColor=black)
+![GitHub](https://img.shields.io/badge/GitHub-Version%20Control-181717?logo=github&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-39FF88)
+
 ## 🚧 Em desenvolvimento
 
 O **Projeto Agro Intelligence** é um projeto de estudo e desenvolvimento que busca aplicar **Tecnologia, Dados e Inteligência Artificial ao Agronegócio**.
