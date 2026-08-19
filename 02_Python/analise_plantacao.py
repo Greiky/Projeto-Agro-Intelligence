@@ -1,55 +1,140 @@
 import pandas as pd
 
-# Caminho do nosso dataset
+# ==========================================
+# AGRO INTELLIGENCE
+# ==========================================
+
+# Caminho do dataset
 arquivo = "04_Datasets/dados_plantacao.csv"
 
 # Carregando os dados
 plantacao = pd.read_csv(arquivo)
 
-# Exibindo os dados
-print("=== AGRO INTELLIGENCE ===")
+print("==========================================")
+print("          🌱 AGRO INTELLIGENCE")
+print("==========================================")
+
 print("\nDados da plantação:")
 print(plantacao)
 
-# Calculando a temperatura média
-Temperatura_media = plantacao["Temperatura"].mean()
 
-print("\nTemperatura média da plantação:")
-print(Temperatura_media)
+# ==========================================
+# FUNÇÃO - ANÁLISE DA UMIDADE
+# ==========================================
 
-# Calculando a umidade média do solo
-Umidade_media = plantacao["Umidade_Solo"].mean()
-
-print("\nUmidade média do solo:")
-print(Umidade_media)
-
-# Calculando o pH médio do solo
-ph_medio = plantacao["pH"].mean()
-
-print("\npH médio do solo:")
-print(ph_medio)
-
-if Umidade_media < 40:
-    print("Umidade baixa")
-
-elif Umidade_media > 70:
-    print("Umidade alta")
-
-# Analisando a umidade de cada dia
-for indice, linha in plantacao.iterrows():
-
-    umidade = linha["Umidade_Solo"]
-
-    print("\nData:", linha["Data"])
-    print("Umidade:", umidade)
+def analisar_umidade(umidade):
 
     if umidade < 40:
-        print("⚠️ ALERTA: Umidade baixa.")
+        return "⚠️ ALERTA: Umidade baixa."
 
     elif umidade > 70:
-        print("⚠️ ALERTA: Umidade alta.")
+        return "⚠️ ALERTA: Umidade alta."
 
     else:
-        print("✅ Umidade dentro da faixa analisada.")
+        return "✅ Umidade dentro da faixa analisada."
 
 
+# ==========================================
+# FUNÇÃO - ANÁLISE DA TEMPERATURA
+# ==========================================
+
+def analisar_temperatura(temperatura):
+
+    if temperatura < 18:
+        return "⚠️ Temperatura baixa."
+
+    elif temperatura > 32:
+        return "⚠️ Temperatura alta."
+
+    else:
+        return "✅ Temperatura dentro da faixa analisada."
+
+
+# ==========================================
+# FUNÇÃO - ANÁLISE DO pH
+# ==========================================
+
+def analisar_ph(ph):
+
+    if ph < 5.5:
+        return "⚠️ pH ácido."
+
+    elif ph > 7.0:
+        return "⚠️ pH elevado."
+
+    else:
+        return "✅ pH dentro da faixa analisada."
+
+
+# ==========================================
+# CÁLCULO DAS MÉDIAS
+# ==========================================
+
+temperatura_media = plantacao["Temperatura"].mean()
+
+umidade_media = plantacao["Umidade_Solo"].mean()
+
+ph_medio = plantacao["pH"].mean()
+
+
+# ==========================================
+# RESULTADOS
+# ==========================================
+
+print("\n==========================================")
+print("          📊 RESUMO DA PLANTAÇÃO")
+print("==========================================")
+
+print(f"\n🌡️ Temperatura média: {temperatura_media:.2f} °C")
+
+print(f"💧 Umidade média do solo: {umidade_media:.2f} %")
+
+print(f"🧪 pH médio do solo: {ph_medio:.2f}")
+
+
+# ==========================================
+# ANÁLISE DAS MÉDIAS
+# ==========================================
+
+print("\n==========================================")
+print("          🔎 ANÁLISE DAS CONDIÇÕES")
+print("==========================================")
+
+print("\nUmidade:")
+print(analisar_umidade(umidade_media))
+
+print("\nTemperatura:")
+print(analisar_temperatura(temperatura_media))
+
+print("\npH:")
+print(analisar_ph(ph_medio))
+
+
+# ==========================================
+# ANÁLISE DIÁRIA
+# ==========================================
+
+print("\n==========================================")
+print("          📅 ANÁLISE DIÁRIA")
+print("==========================================")
+
+
+for indice, linha in plantacao.iterrows():
+
+    data = linha["Data"]
+    umidade = linha["Umidade_Solo"]
+    temperatura = linha["Temperatura"]
+    ph = linha["pH"]
+
+    print("\n------------------------------------------")
+
+    print("📅 Data:", data)
+
+    print("💧 Umidade:", umidade, "%")
+    print(analisar_umidade(umidade))
+
+    print("🌡️ Temperatura:", temperatura, "°C")
+    print(analisar_temperatura(temperatura))
+
+    print("🧪 pH:", ph)
+    print(analisar_ph(ph))
